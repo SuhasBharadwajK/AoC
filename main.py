@@ -25,7 +25,7 @@ def day2():
 def day3():
     formatter = lambda x: x.strip()
     input_data = get_input_data(3, 1, formatter)
-    return d3p1.program(input_data)
+    return d3p1.program(input_data), d3p2.program(input_data)
 
 if __name__ == '__main__':
     print('Day 1: ' + str(day1()))
