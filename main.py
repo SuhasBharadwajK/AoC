@@ -1,5 +1,5 @@
 import utils
-import day1.program as day1code
+import day1.part1 as day1part1
 
 def get_input_data(day_number, input_number, formatter):
     input_path = './day' + str(day_number) + '/inputs/' + str(input_number) + '.txt'
@@ -10,7 +10,7 @@ def get_input_data(day_number, input_number, formatter):
 def day1():
     formatter = lambda x: int(x)
     input_data = get_input_data(1, 1, formatter)
-    return day1code.program(input_data)
+    return day1part1.program(input_data)
 
 def day2():
     pass
