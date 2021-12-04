@@ -3,6 +3,8 @@ import day1.part1 as d1p1
 import day1.part2 as d1p2
 import day2.part1 as d2p1
 import day2.part2 as d2p2
+import day3.part1 as d3p1
+import day3.part2 as d3p2
 
 def get_input_data(day_number, input_number, formatter):
     input_path = './day' + str(day_number) + '/inputs/' + str(input_number) + '.txt'
@@ -20,6 +22,12 @@ def day2():
     input_data = get_input_data(2, 1, formatter)
     return d2p1.program(input_data), d2p2.program(input_data)
 
+def day3():
+    formatter = lambda x: x.strip()
+    input_data = get_input_data(3, 1, formatter)
+    return d3p1.program(input_data)
+
 if __name__ == '__main__':
     print('Day 1: ' + str(day1()))
     print('Day 2: ' + str(day2()))
+    print('Day 3: ' + str(day3()))
