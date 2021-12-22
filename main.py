@@ -54,7 +54,7 @@ def day6():
 
 def day8():
     formatter = lambda x: list(map(lambda y: y.strip(), x.split('|')))
-    input_data = get_input_data(8, 0, formatter)
+    input_data = get_input_data(8, 1, formatter)
     return d8p1.program(input_data), d8p2.program(input_data)
 
 if __name__ == '__main__':
