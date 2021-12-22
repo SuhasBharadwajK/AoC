@@ -1,7 +1,7 @@
 def program(school):
     total = 0
     for fish in school:
-        total += get_school(fish, 256)
+        total += get_school(fish, 8)
     return total
 
 

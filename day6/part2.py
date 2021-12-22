@@ -20,7 +20,8 @@ def program(a):
     total = 0
     for _,v in c.items():
         total += v
-    print(total)
+
+    return total
 
 
 ##########################################################################################
@@ -79,13 +80,13 @@ start = 3
 
 school[start] += 1
 
-for k, v in school:
-    if k == 0:
-        school[6] += v
-        school[8] = v
+# for k, v in school:
+#     if k == 0:
+#         school[6] += v
+#         school[8] = v
 
-    else:
-        school[k - 1] += v
+#     else:
+#         school[k - 1] += v
 
 # for i in [7, 14, 21, 28, 35, 49, 56, 63, 70]:
 #     print('Total fish = ' + str(get_school(i, 3)))
