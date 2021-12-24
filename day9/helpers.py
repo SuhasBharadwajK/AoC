@@ -1,5 +1,6 @@
 def get_low_points(floor_map):
     low_points = []
+    low_point_positions = []
     for i in range(0, len(floor_map)):
         for j in range(0, len(floor_map[i])):
             index_up = i - 1
@@ -15,5 +16,6 @@ def get_low_points(floor_map):
             current = floor_map[i][j]
             if (up == -1 or up > current) and (down == -1 or down > current) and (left == -1 or left > current) and (right == -1 or right > current):
                 low_points.append(current)
+                low_point_positions.append([i, j])
 
-    return low_points
+    return low_points, low_point_positions
