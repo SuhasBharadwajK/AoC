@@ -68,7 +68,7 @@ def day9():
 
 def day10():
     formatter = lambda x: x.strip()
-    input_data = get_input_data(10, 0, formatter)
+    input_data = get_input_data(10, 1, formatter)
     return d10p1.program(input_data), d10p2.program(input_data)
 
 if __name__ == '__main__':
