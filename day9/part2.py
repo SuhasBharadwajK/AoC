@@ -36,10 +36,7 @@ def program(floor_map):
 
 def trace_basin(floor_map, pos_x: int, pos_y: int, basin: list[int], limit_x: int, limit_y: int, scanned_positions: list = []):
     
-    if pos_x < 0 or pos_y < 0 or pos_x >= limit_x or pos_y >= limit_y:
-        return
-
-    if [pos_x, pos_y] in scanned_positions:
+    if pos_x < 0 or pos_y < 0 or pos_x >= limit_x or pos_y >= limit_y or [pos_x, pos_y] in scanned_positions:
         return
 
     point_value = floor_map[pos_x][pos_y]
@@ -47,7 +44,7 @@ def trace_basin(floor_map, pos_x: int, pos_y: int, basin: list[int], limit_x: in
     if point_value < 9:
         basin.append(point_value)
         scanned_positions.append([pos_x, pos_y])
-        
+
         trace_basin(floor_map, pos_x - 1, pos_y, basin, limit_x, limit_y) # Trace up
         trace_basin(floor_map, pos_x + 1, pos_y, basin, limit_x, limit_y) # Trace down
         trace_basin(floor_map, pos_x, pos_y - 1, basin, limit_x, limit_y) # Trace right
