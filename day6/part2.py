@@ -74,7 +74,7 @@ school = {}
 for i in range(0, 9):
     school[i] = 0
 
-print(school)
+# print(school)
 
 start = 3
 
