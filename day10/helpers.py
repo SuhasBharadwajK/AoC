@@ -5,6 +5,13 @@ illegal_scorecard = {
     '>': 25137,
 }
 
+autocomplete_scorecard = {
+    '(': 1,
+    '[': 2,
+    '{': 3,
+    '<': 4,
+}
+
 legal_pairs = {
     '(': ')',
     '[': ']',
