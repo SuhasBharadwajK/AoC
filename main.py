@@ -17,6 +17,8 @@ import day9.part1 as d9p1
 import day9.part2 as d9p2
 import day10.part1 as d10p1
 import day10.part2 as d10p2
+import day11.part1 as d11p1
+import day11.part2 as d11p2
 
 def get_input_data(day_number, input_number, formatter, is_single_line = False):
     input_path = './day' + str(day_number) + '/inputs/' + str(input_number) + '.txt'
@@ -71,6 +73,11 @@ def day10():
     input_data = get_input_data(10, 1, formatter)
     return d10p1.program(input_data), d10p2.program(input_data)
 
+def day11():
+    formatter = lambda x: list(map(lambda y: int(y), list(x.strip())))
+    input_data = get_input_data(11, 1, formatter)
+    return d11p1.program(input_data), d11p2.program(input_data)
+
 if __name__ == '__main__':
     print('Day 1 : ' + str(day1()))
     print('Day 2 : ' + str(day2()))
@@ -81,3 +88,4 @@ if __name__ == '__main__':
     print('Day 8 : ' + str(day8()))
     print('Day 9 : ' + str(day9()))
     print('Day 10: ' + str(day10()))
+    print('Day 11: ' + str(day11()))
