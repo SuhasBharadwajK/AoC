@@ -1,4 +1,5 @@
 import utils
+import copy
 import day1.part1 as d1p1
 import day1.part2 as d1p2
 import day2.part1 as d2p1
@@ -75,8 +76,8 @@ def day10():
 
 def day11():
     formatter = lambda x: list(map(lambda y: int(y), list(x.strip())))
-    input_data = get_input_data(11, 1, formatter)
-    return d11p1.program(input_data), d11p2.program(input_data)
+    input_data = get_input_data(11, 1, formatter)[:]
+    return d11p1.program(copy.deepcopy(input_data)), d11p2.program(input_data[:])
 
 if __name__ == '__main__':
     print('Day 1 : ' + str(day1()))
