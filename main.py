@@ -83,7 +83,7 @@ def day11():
 
 def day12():
     formatter = lambda x: x.strip().split('-')
-    input_data = get_input_data(12, 1, formatter)
+    input_data = get_input_data(12, 3, formatter)
     return d12p1.program(copy.deepcopy(input_data)), d12p2.program(input_data)
 
 if __name__ == '__main__':
