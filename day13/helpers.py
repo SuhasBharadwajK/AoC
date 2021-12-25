@@ -21,29 +21,12 @@ def fold_paper(dot_pattern: list[list[int]], fold_instructions: list[tuple[str, 
         if fold_count > number_of_folds:
             break
 
-        is_vertical_fold = instruction[0] == 'y'
-        pivot_point = instruction[1]
+        transform_index = 1 if instruction[0] == 'y' else 0 # Get if the transformation needs to be done along x or y
+        folding_point = instruction[1]
 
-        coordinates_to_transform = []
-
-        if is_vertical_fold:
-            for coordinate in dot_pattern:
-                if coordinate[1] > pivot_point: # Get all the points whose y is greater than pivot
-                    coordinates_to_transform.append(coordinate)
-                else:
-                    remaining_coordinates.append(coordinate)
-        else:
-            for coordinate in dot_pattern:
-                if coordinate[0] > pivot_point: # Get all the points whose x is greater than pivot
-                    coordinates_to_transform.append(coordinate)
-                else:
-                    remaining_coordinates.append(coordinate)
-
-        for coordinate in coordinates_to_transform:
-            if is_vertical_fold:
-                coordinate[1] -= 2 * (coordinate[1] - pivot_point) # Transform all the y coordinates
-            else:
-                coordinate[0] -= 2 * (coordinate[0] - pivot_point) # Transform all the x coordinates
+        for coordinate in dot_pattern:
+            if coordinate[transform_index] > folding_point:
+                coordinate[transform_index] -= 2 * (coordinate[transform_index] - folding_point)
 
             if coordinate not in remaining_coordinates:
                 remaining_coordinates.append(coordinate)
