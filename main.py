@@ -103,7 +103,7 @@ def day14():
     return d14p1.program(copy.deepcopy(input_data)), d14p2.program(input_data)
 
 def day15():
-    formatter = lambda x: x.strip()
+    formatter = lambda x: list(map(lambda y: int(y), list(x.strip())))
     input_data = get_input_data(15, 1, formatter)
     return d15p1.program(copy.deepcopy(input_data)), d15p2.program(input_data)
 
